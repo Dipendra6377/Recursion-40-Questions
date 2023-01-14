@@ -1,3 +1,5 @@
+//https://leetcode.com/problems/subsets/solutions/27281/a-general-approach-to-backtracking-questions-in-java-subsets-permutations-combination-sum-palindrome-partitioning/
+
 class Solution {
     List<List<Integer>> result;
     public List<List<Integer>> subsets(int[] nums) {
