@@ -32,4 +32,42 @@ class Solution{
 }
 
 
-// Time complexity 
+// Time complexity O(N*Sum)   space is also same
+
+
+class Solution{
+
+    static int mod = (int)1e9+7;
+	public int perfectSum(int arr[],int n, int sum) 
+	{ 
+	    // Your code goes here
+	    int[][] dp = new int[n][sum+1];
+	    
+	    for(int[] row:dp){
+	        Arrays.fill(row,-1);
+	    }
+	    
+	    return solve(n-1,arr,sum,dp);
+	} 
+	
+	public int solve(int index,int[] arr,int target,int[][] dp){
+	    if(index==0){
+	        if(target==0 && arr[0]==0) return 2;
+	        
+	        if(target==0 || target ==arr[0]) return 1;
+	        
+	        return 0;
+	    }
+	    if(dp[index][target] != -1){
+            return dp[index][target];
+        }
+        
+        int notTake = solve(index - 1, arr, target, dp);
+        int take = 0;
+        if(arr[index] <= target){
+            take = solve(index - 1, arr, target - arr[index], dp);
+        }
+        
+        return dp[index][target] = (notTake + take) % mod;
+	}
+}
