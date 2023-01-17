@@ -1,3 +1,6 @@
+//  https://www.youtube.com/watch?v=4QjCc7HeR8s
+// for video solution
+
 class Solution {
     public boolean exist(char[][] board, String word) {
         int n=board.length;
