@@ -29,11 +29,11 @@ class solve {
         }
         return false;
     }
-    public boolean FillingPossible(int col,int node,boolean[][] graph,int[] color){
+    public boolean FillingPossible(int col,int node,boolean[][] graph,int[] color){    // check if adjacent position has same color or not
         
         for(int i=0;i<graph[node].length;i++){
             
-            if(graph[node][i]==true){
+            if(graph[node][i]==true){       
                 if(color[i]==col) return false;
             } 
         }
